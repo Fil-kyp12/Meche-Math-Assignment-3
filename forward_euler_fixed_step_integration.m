@@ -31,7 +31,7 @@ function [t_list,X_list,h_avg,num_evals] = ...
     for n = 1:N
 
         [X_next,evals] = forward_euler_step( ...
-            rate_func_in,t_list(n),X_list(n,:),h_avg);
+            rate_func_in,t_list(n),X_list(n,:)',h_avg);
 
         t_list(n+1) = t_list(n) + h_avg;
         X_list(n+1,:) = X_next(:)';
